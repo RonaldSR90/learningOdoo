@@ -2,6 +2,7 @@
 
 from odoo import models, fields
 
+# Profesores
 
 class profesor(models.Model):
     _name = 'escuela.profesor'
@@ -30,12 +31,16 @@ class profesor(models.Model):
         column2="materia_id",
     )
 
+# Alumnos
+
 class alumno(models.Model):
     _name = 'escuela.alumno'
     _description = 'alumno'
 
     name = fields.Char(string="Nombre", required=True)
     profesor = fields.Many2one("escuela.profesor")
+
+# Materias
 
 class materia(models.Model):
     _name = 'escuela.materia'
