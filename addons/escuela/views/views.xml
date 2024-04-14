@@ -58,6 +58,44 @@
       </field>
     </record>
 
+    <record model="ir.ui.view" id="escuela.profesor_kanban">
+      <field name="name">escuela profesor kanban</field>
+      <field name="model">escuela.profesor</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <templantes>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_global_click card">
+              <div class="card-header d-flex justify-content-between aling-items-center">
+              <strong class="text-primary">
+                Nombre: <field name="name"/>
+              </strong>
+              </div>
+                <div class="card-body">
+                  <div class="mt-2">
+                    <i class="fa fa-address-card me-2"></i>
+                    <field name="edad"/>
+                  </div>
+                  <div class="mt-2">
+                    <i class="fa fa-building me-2"></i>
+                    <field name="saldo"/>
+                  </div>
+                  <div class="mt-2">
+                    <i class="fa fa-laptop me-2"></i>
+                    <field name="estado"/>
+                  </div>
+                  <div class="mt-2">
+                    <i class="fa fa-check me-2"></i>
+                    <field name="grado"/>
+                  </div>                  
+                </div>
+              </div>
+            </t>
+          </templantes>
+        </kanban>
+      </field>
+    </record>
+
     <!-- alumno -->
 
     <record model="ir.ui.view" id="escuela.alumno_list">
@@ -131,25 +169,25 @@
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="escuela.profesor_action_window">
-      <field name="name">escuela profesor window</field>
+      <field name="name">Profesores</field>
       <field name="res_model">escuela.profesor</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">tree,form,kanban</field>
     </record>
 
     <record model="ir.actions.act_window" id="escuela.alumno_action_window">
-      <field name="name">escuela alumno window</field>
+      <field name="name">Alumnos</field>
       <field name="res_model">escuela.alumno</field>
       <field name="view_mode">tree,form</field>
     </record>
 
     <record model="ir.actions.act_window" id="escuela.materia_action_window">
-      <field name="name">escuela materia window</field>
+      <field name="name">Materias</field>
       <field name="res_model">escuela.materia</field>
       <field name="view_mode">tree,form</field>
     </record>
 
     <record model="ir.actions.act_window" id="escuela.nota_action_window">
-      <field name="name">escuela nota window</field>
+      <field name="name">Notas</field>
       <field name="res_model">escuela.nota</field>
       <field name="view_mode">tree,form</field>
     </record>
